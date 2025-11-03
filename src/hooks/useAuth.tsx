@@ -75,6 +75,17 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const signUp = async (email: string, password: string, fullName: string, role: AppRole) => {
     try {
+      // Check if email already exists
+      const { data: existingUser } = await supabase
+        .from('profiles')
+        .select('email')
+        .eq('email', email)
+        .maybeSingle();
+
+      if (existingUser) {
+        throw new Error('This email is already registered. Please use a different email or sign in.');
+      }
+
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
@@ -96,7 +107,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
         if (roleError) throw roleError;
 
-        toast.success('Account created successfully!');
+        toast.success('Account created successfully! Welcome to Asaan Zindagi.');
         navigate('/home');
       }
     } catch (error: any) {
@@ -112,11 +123,27 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         password,
       });
 
-      if (error) throw error;
+      if (error) {
+        if (error.message.includes('Invalid login credentials')) {
+          throw new Error('Invalid email or password. Please check your credentials and try again.');
+        }
+        throw error;
+      }
 
       if (data.user) {
+        // Verify profile exists
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('email')
+          .eq('id', data.user.id)
+          .maybeSingle();
+
+        if (!profile) {
+          throw new Error('Account not found. Please contact support.');
+        }
+
         await fetchUserRole(data.user.id);
-        toast.success('Signed in successfully!');
+        toast.success('Welcome back! Signed in successfully.');
         navigate('/home');
       }
     } catch (error: any) {
