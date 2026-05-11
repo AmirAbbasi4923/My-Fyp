@@ -1,19 +1,36 @@
 import { useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
+import logoMark from '@/assets/az-logo.svg';
 
 const SplashScreen = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const logoRef = useRef<HTMLImageElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const next = searchParams.get('next') || '/signin';
+
     const tl = gsap.timeline({
       onComplete: () => {
-        navigate('/signin');
+        navigate(next);
       }
     });
+
+    // Animate logo
+    if (logoRef.current) {
+      tl.from(logoRef.current, {
+        opacity: 0,
+        scale: 0.5,
+        rotation: -180,
+        duration: 0.8,
+        ease: 'back.out(1.7)',
+      });
+    }
 
     // Animate title letters
     if (titleRef.current) {
@@ -45,13 +62,14 @@ const SplashScreen = () => {
       opacity: 0,
       duration: 0.8,
       ease: 'power2.inOut',
-      delay: 1.2,
+      // Total splash display ~3.2s before navigating
+      delay: 3.2,
     });
 
     return () => {
       tl.kill();
     };
-  }, [navigate]);
+  }, [navigate, location.search]);
 
   return (
     <div
@@ -59,18 +77,28 @@ const SplashScreen = () => {
       className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-primary via-primary-glow to-secondary"
     >
       <div className="text-center space-y-6 px-4">
-        <h1
-          ref={titleRef}
-          className="text-6xl md:text-8xl font-bold text-white tracking-tight"
-          style={{ perspective: '1000px' }}
-        >
-          Asaan Zindagi
-        </h1>
+        <div className="flex items-center justify-center gap-4 mb-4">
+          <img
+            ref={logoRef}
+            src={logoMark}
+            alt="Asaan Zindagi logo"
+            className="h-16 w-16 md:h-24 md:w-24 brightness-0 invert"
+            loading="eager"
+            draggable={false}
+          />
+          <h1
+            ref={titleRef}
+            className="text-6xl md:text-8xl font-bold text-white tracking-tight"
+            style={{ perspective: '1000px' }}
+          >
+            Asaan Zindagi
+          </h1>
+        </div>
         <p
           ref={subtitleRef}
           className="text-xl md:text-2xl text-white/90 font-light"
         >
-          Smart Healthcare Queue & Appointment System
+          Smarter Healthcare, Simpler Lives.
         </p>
       </div>
 

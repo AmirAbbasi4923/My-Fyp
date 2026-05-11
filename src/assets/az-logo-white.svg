@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="logoTitleWhite logoDescWhite">
+  <title id="logoTitleWhite">Asaan Zindagi Logo White</title>
+  <desc id="logoDescWhite">Circular mark with stylized AZ letters and heartbeat line in white</desc>
+  <circle cx="60" cy="60" r="50" fill="none" stroke="#ffffff" stroke-width="8" />
+  <path
+    d="M34 78 L52 34 L68 78"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M74 34 H96 L72 78 H96"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M20 65 H36 L46 52 L54 84 L66 42 L78 70 H100"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
