@@ -76,19 +76,19 @@ const SplashScreen = () => {
       ref={containerRef}
       className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-primary via-primary-glow to-secondary"
     >
-      <div className="text-center space-y-6 px-4">
-        <div className="flex items-center justify-center gap-4 mb-4">
+      <div className="text-center space-y-4 px-4 w-full max-w-[95vw] mx-auto">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-2">
           <img
             ref={logoRef}
             src={logoMark}
             alt="Asaan Zindagi logo"
-            className="h-16 w-16 md:h-24 md:w-24 brightness-0 invert"
+            className="h-14 w-14 sm:h-16 sm:w-16 md:h-24 md:w-24 brightness-0 invert flex-shrink-0"
             loading="eager"
             draggable={false}
           />
           <h1
             ref={titleRef}
-            className="text-6xl md:text-8xl font-bold text-white tracking-tight"
+            className="text-3xl sm:text-5xl md:text-7xl font-bold text-white tracking-tight leading-tight"
             style={{ perspective: '1000px' }}
           >
             Asaan Zindagi
@@ -96,7 +96,7 @@ const SplashScreen = () => {
         </div>
         <p
           ref={subtitleRef}
-          className="text-xl md:text-2xl text-white/90 font-light"
+          className="text-base sm:text-xl md:text-2xl text-white/90 font-light px-2"
         >
           Smarter Healthcare, Simpler Lives.
         </p>

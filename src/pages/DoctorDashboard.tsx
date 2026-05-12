@@ -458,10 +458,42 @@ const DoctorDashboard = () => {
         </div>
       </aside>
 
+      {/* Mobile Bottom Navigation Bar */}
+      <nav className="mobile-bottom-nav">
+        <button
+          onClick={() => setActiveView('dashboard')}
+          className={activeView === 'dashboard' ? 'active' : ''}
+        >
+          <LayoutDashboard />
+          <span>Queue</span>
+        </button>
+        <button
+          onClick={() => setActiveView('history')}
+          className={activeView === 'history' ? 'active' : ''}
+        >
+          <History />
+          <span>Schedule</span>
+        </button>
+        <button
+          onClick={() => setActiveView('patients')}
+          className={activeView === 'patients' ? 'active' : ''}
+        >
+          <Users />
+          <span>Patients</span>
+        </button>
+        <button
+          onClick={() => setActiveView('settings')}
+          className={activeView === 'settings' ? 'active' : ''}
+        >
+          <Settings />
+          <span>Profile</span>
+        </button>
+      </nav>
+
       {/* Main Content */}
       <main className="flex-1 md:ml-64 p-4 md:p-8 min-h-screen">
         <ScrollArea className="h-full">
-          <div className="max-w-6xl mx-auto space-y-8 pb-10">
+          <div className="max-w-6xl mx-auto space-y-8 pb-10 mobile-bottom-nav-spacer">
 
             {/* View Transitions */}
             {activeView === 'dashboard' && (

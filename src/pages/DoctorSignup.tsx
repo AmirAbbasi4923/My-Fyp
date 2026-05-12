@@ -62,21 +62,21 @@ const DoctorSignup = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-blue-100 to-white p-4 relative overflow-hidden">
-      <div className="absolute top-20 left-20 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-blue-100 to-white p-3 sm:p-4 relative overflow-x-hidden overflow-y-auto">
+      <div className="absolute top-20 left-10 sm:left-20 w-48 sm:w-72 h-48 sm:h-72 bg-blue-200/30 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 right-10 sm:right-20 w-64 sm:w-96 h-64 sm:h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
-      <Card className="w-full max-w-xl flex flex-col backdrop-blur-sm bg-white/95 shadow-2xl border-0 relative z-10 animate-fade-in">
+      <Card className="w-full max-w-xl flex flex-col backdrop-blur-sm bg-white/95 shadow-2xl border-0 relative z-10 animate-fade-in my-4">
         <CardHeader className="text-center space-y-2 pt-6 pb-2 px-6">
-          <CardTitle className="flex items-center justify-center gap-3">
+          <CardTitle className="flex items-center justify-center gap-2 sm:gap-3">
             <img
               src={logoMark}
               alt="Asaan Zindagi logo"
-              className="h-10 w-10 md:h-12 md:w-12"
+              className="h-9 w-9 sm:h-10 sm:w-10 md:h-12 md:w-12 flex-shrink-0"
               loading="lazy"
               draggable={false}
             />
-            <span className="text-3xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent tracking-wide leading-tight">
+            <span className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent tracking-wide leading-tight">
               Doctor Registration
             </span>
           </CardTitle>
@@ -87,7 +87,7 @@ const DoctorSignup = () => {
         <CardContent className="space-y-4 px-6 pb-6">
           <form onSubmit={handleSubmit} className="space-y-4">
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="name" className="text-sm font-medium text-gray-700 flex items-center gap-2">
                   <User className="w-4 h-4 text-primary" /> Full Name <span className="text-red-500">*</span>
@@ -119,7 +119,7 @@ const DoctorSignup = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="speciality" className="text-sm font-medium text-gray-700 flex items-center gap-2">
                   <Stethoscope className="w-4 h-4 text-primary" /> Speciality <span className="text-red-500">*</span>

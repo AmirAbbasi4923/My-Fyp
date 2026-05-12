@@ -485,9 +485,48 @@ const AdminPanel = () => {
         </div>
       </aside>
 
+      {/* Mobile Bottom Navigation Bar */}
+      <nav className="mobile-bottom-nav">
+        <button
+          onClick={() => setActiveView('dashboard')}
+          className={activeView === 'dashboard' ? 'active' : ''}
+        >
+          <LayoutDashboard />
+          <span>Home</span>
+        </button>
+        <button
+          onClick={() => setActiveView('doctors')}
+          className={activeView === 'doctors' ? 'active' : ''}
+        >
+          <Stethoscope />
+          <span>Doctors</span>
+        </button>
+        <button
+          onClick={() => setActiveView('appointments')}
+          className={activeView === 'appointments' ? 'active' : ''}
+        >
+          <ClipboardList />
+          <span>Visits</span>
+        </button>
+        <button
+          onClick={() => setActiveView('patients')}
+          className={activeView === 'patients' ? 'active' : ''}
+        >
+          <Users />
+          <span>Patients</span>
+        </button>
+        <button
+          onClick={() => setActiveView('settings')}
+          className={activeView === 'settings' ? 'active' : ''}
+        >
+          <Settings />
+          <span>Settings</span>
+        </button>
+      </nav>
+
       {/* Main Content */}
       <main className="flex-1 md:ml-64 p-4 md:p-8 overflow-y-auto max-h-screen relative">
-        <div className="max-w-7xl mx-auto space-y-8 animate-fade-in">
+        <div className="max-w-7xl mx-auto space-y-8 animate-fade-in mobile-bottom-nav-spacer">
 
           {/* Top Bar */}
           <header className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
