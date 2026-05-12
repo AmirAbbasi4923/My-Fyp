@@ -787,10 +787,49 @@ const PatientPortal = () => {
         </div>
       </aside>
 
+      {/* Mobile Bottom Navigation Bar */}
+      <nav className="mobile-bottom-nav">
+        <button
+          onClick={() => setActiveView('dashboard')}
+          className={activeView === 'dashboard' ? 'active' : ''}
+        >
+          <LayoutDashboard />
+          <span>Home</span>
+        </button>
+        <button
+          onClick={() => setActiveView('browse')}
+          className={activeView === 'browse' ? 'active' : ''}
+        >
+          <Search />
+          <span>Doctors</span>
+        </button>
+        <button
+          onClick={() => setActiveView('appointments')}
+          className={activeView === 'appointments' ? 'active' : ''}
+        >
+          <ClipboardList />
+          <span>Visits</span>
+        </button>
+        <button
+          onClick={() => setActiveView('records')}
+          className={activeView === 'records' ? 'active' : ''}
+        >
+          <FileText />
+          <span>Records</span>
+        </button>
+        <button
+          onClick={() => setActiveView('settings')}
+          className={activeView === 'settings' ? 'active' : ''}
+        >
+          <Settings />
+          <span>Settings</span>
+        </button>
+      </nav>
+
       {/* Main Content */}
       <main className="flex-1 md:ml-64 h-screen overflow-hidden flex flex-col">
         <div className="flex-1 overflow-y-auto p-4 md:p-8">
-          <div className="max-w-7xl mx-auto space-y-8 animate-fade-in">
+          <div className="max-w-7xl mx-auto space-y-8 animate-fade-in mobile-bottom-nav-spacer">
 
             <header className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
               <div className="flex items-center gap-4">
