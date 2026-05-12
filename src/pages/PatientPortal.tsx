@@ -831,6 +831,25 @@ const PatientPortal = () => {
         <div className="flex-1 overflow-y-auto p-4 md:p-8">
           <div className="max-w-7xl mx-auto space-y-8 animate-fade-in mobile-bottom-nav-spacer">
 
+            {/* Mobile-only Top Bar with Sign Out */}
+            <div className="flex items-center justify-between mb-4 md:hidden">
+              <div className="flex items-center gap-2">
+                <img src={logoMark} alt="Logo" className="w-6 h-6" />
+                <span className="font-bold text-base bg-gradient-to-r from-primary to-primary-600 bg-clip-text text-transparent">
+                  Patient Portal
+                </span>
+              </div>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={signOut}
+                className="text-red-600 hover:text-red-700 hover:bg-red-50 gap-1.5 text-xs px-2 py-1 h-auto"
+              >
+                <LogOut className="w-3.5 h-3.5" />
+                Sign Out
+              </Button>
+            </div>
+
             <header className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
               <div className="flex items-center gap-4">
                 <div>
