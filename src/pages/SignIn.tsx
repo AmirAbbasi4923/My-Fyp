@@ -159,20 +159,31 @@ const SignIn = () => {
                   )}
                 </Button>
               </form>
+
+              {/* Register links — inside Card so they're never clipped by overflow-x-hidden */}
+              <div className="pt-2 text-center text-sm text-gray-600">
+                Not registered yet?{' '}
+                <button
+                  type="button"
+                  onClick={() => navigate('/signup')}
+                  className="text-primary font-semibold underline-offset-2 hover:underline py-1 px-1"
+                >
+                  Register yourself
+                </button>
+                {' '}or{' '}
+                <button
+                  type="button"
+                  onClick={() => navigate('/doctor-signup')}
+                  className="text-green-600 font-semibold underline-offset-2 hover:underline py-1 px-1"
+                >
+                  Register as Doctor
+                </button>
+              </div>
             </div>
           </Tabs>
         </CardContent>
       </Card>
-      <div className="mt-4 text-center text-sm text-gray-600">
-        Not registered yet?{' '}
-        <button onClick={() => navigate('/signup')} className="text-primary font-semibold underline-offset-2 hover:underline">
-          Register yourself
-        </button>
-        {' '}or{' '}
-        <button onClick={() => navigate('/doctor-signup')} className="text-green-600 font-semibold underline-offset-2 hover:underline">
-          Register as Doctor
-        </button>
-      </div>
+
     </div>
   );
 };
