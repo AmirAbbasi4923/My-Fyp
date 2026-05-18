@@ -13,9 +13,14 @@ dist-ssr
 *.local
 
 # Environment variables
-.env
 .env.local
 .env.production
+.env
+.cursorignore
+.cursor
+.gitignore
+railway.toml
+*.md
 
 # Editor directories and files
 .vscode/*

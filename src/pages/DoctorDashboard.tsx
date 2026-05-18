@@ -495,6 +495,25 @@ const DoctorDashboard = () => {
         <ScrollArea className="h-full">
           <div className="max-w-6xl mx-auto space-y-8 pb-10 mobile-bottom-nav-spacer">
 
+            {/* Mobile-only Top Bar with Sign Out */}
+            <div className="flex items-center justify-between mb-4 md:hidden">
+              <div className="flex items-center gap-2">
+                <img src={logoMark} alt="Logo" className="w-6 h-6" />
+                <span className="font-bold text-base bg-gradient-to-r from-primary to-primary-600 bg-clip-text text-transparent">
+                  Doctor Portal
+                </span>
+              </div>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={signOut}
+                className="text-red-600 hover:text-red-700 hover:bg-red-50 gap-1.5 text-xs px-2 py-1 h-auto"
+              >
+                <LogOut className="w-3.5 h-3.5" />
+                Sign Out
+              </Button>
+            </div>
+
             {/* View Transitions */}
             {activeView === 'dashboard' && (
               <div className="animate-in fade-in duration-500 space-y-6">
