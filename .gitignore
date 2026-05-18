@@ -19,7 +19,6 @@ dist-ssr
 .cursorignore
 .cursor
 .gitignore
-railway.toml
 *.md
 
 # Editor directories and files
