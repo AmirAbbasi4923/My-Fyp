@@ -183,8 +183,8 @@ By improving efficiency and accessibility of digital health services in outpatie
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/asaan-zindagi.git
-cd asaan-zindagi
+git clone https://github.com/AmirAbbasi4923/My-Fyp.git
+cd My-Fyp
 ```
 
 ### Install Dependencies
@@ -216,11 +216,11 @@ supabase db push
 npm run dev
 ```
 
-The app will be available at `http://localhost:5173`
+The app will be available at `[http://localhost:8080/]`
 
 ### Production Deployment (Railway)
 
-Push to `main` branch — GitHub Actions will handle the CI/CD pipeline automatically to Railway Cloud.
+Push to `main` branch — GitHub Actions will handle the CI/CD pipeline automatically to Railway Cloud. 
 
 ---
 
@@ -230,4 +230,3 @@ This project was developed as an academic Final Year Project at FAST-NUCES, Kara
 
 ---
 
-*Asaan Zindagi — Making healthcare access easier, one queue at a time.*
