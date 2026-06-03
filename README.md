@@ -1,9 +1,11 @@
 # 🏥 Asaan Zindagi — Smart Healthcare Queue & Appointment Optimization System
 
-> **Final Year Project | BS Electrical Engineering**
+> **Final Year Project | BS Computer Engineering**
 > National University of Computer & Emerging Sciences (FAST-NUCES), Karachi — June 2026
 
-**Asaan Zindagi** (Urdu: *Easy Life*) is a cloud-native, serverless OPD (Out-Patient Department) management system designed to eliminate inefficiencies in traditional healthcare queue management. The system achieves a **25–30% reduction in patient wait times** through a Dynamic FCFS Re-indexing Algorithm and real-time multi-portal synchronization.
+**Asaan Zindagi** is a cloud-native, serverless OPD (Out-Patient Department) management system designed to eliminate inefficiencies in traditional healthcare queue management. The system achieves a **25–30% reduction in patient wait times** through a Dynamic FCFS Re-indexing Algorithm and real-time multi-portal synchronization.
+
+![Overview](./overview.png)
 
 ---
 
@@ -15,7 +17,6 @@
 | Syed Ammar Zulfiqar | 22K-4845 |
 
 **Internal Advisor:** Engr. Qurat ul Ain Sohail
-**Department:** Electrical Engineering, FAST-NUCES Karachi
 
 ---
 
@@ -27,7 +28,6 @@
 - [Tech Stack](#tech-stack)
 - [Modules](#modules)
 - [Algorithm](#algorithm)
-- [Project Structure](#project-structure)
 - [Results](#results)
 - [SDG Alignment](#sdg-alignment)
 - [Limitations](#limitations)
@@ -132,13 +132,6 @@ The core queue engine is implemented as a **PostgreSQL trigger function** that f
 4. The updated queue order is broadcast via Supabase Realtime to all connected portals within milliseconds
 
 This eliminates the "ghost slot" problem in static FCFS systems and maintains maximum clinic throughput despite real-world arrival irregularities.
-
----
-
-## 📁 Project Structure
-
-<!-- Attach a screenshot of your project folder structure below -->
-![Project Folder Structure](./path/to/your/folder-structure-screenshot.png)
 
 ---
 
